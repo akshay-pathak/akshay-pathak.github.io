@@ -1,274 +1,572 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshay Pathak</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .skill-card {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05);
-        }
-        /* Custom scrollbar for the horizontal timeline */
-        .timeline-container::-webkit-scrollbar {
-            height: 8px;
-        }
-        .timeline-container::-webkit-scrollbar-track {
-            background: #000; /* bg-black */
-        }
-        .timeline-container::-webkit-scrollbar-thumb {
-            background: #4f46e5; /* indigo-600 */
-            border-radius: 4px;
-        }
-        .timeline-container::-webkit-scrollbar-thumb:hover {
-            background: #6366f1; /* indigo-500 */
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshay Pathak - Industrial Automation & Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .skill-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05);
+        }
+        /* Custom scrollbar for the horizontal timeline */
+        .timeline-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .timeline-container::-webkit-scrollbar-track {
+            background: #000;
+        }
+        .timeline-container::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 4px;
+        }
+        .timeline-container::-webkit-scrollbar-thumb:hover {
+            background: #6366f1;
+        }
+        
+        /* Experience card animations */
+        .experience-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .experience-card:hover {
+            border-left-color: #4f46e5;
+            transform: translateX(8px);
+        }
+        
+        /* Achievement badges */
+        .achievement-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin: 2px;
+            transition: transform 0.2s ease;
+        }
+        .achievement-badge:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Tech stack icons */
+        .tech-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+        .tech-icon:hover {
+            transform: rotate(360deg) scale(1.1);
+        }
+        
+        /* Learning path indicators */
+        .learning-indicator {
+            position: relative;
+            padding-left: 30px;
+        }
+        .learning-indicator::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #4f46e5;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+        }
+        
+        /* Expandable sections */
+        .expandable {
+            max-height: 100px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .expandable.expanded {
+            max-height: none;
+        }
+    </style>
 </head>
 <body class="bg-black text-gray-300">
 
-    <!-- Header & Navigation -->
-    <header class="bg-black/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-indigo-400">Akshay Pathak</a>
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="#about" class="text-gray-300 hover:text-indigo-400 transition duration-300">About</a>
-                <a href="#experience" class="text-gray-300 hover:text-indigo-400 transition duration-300">Experience</a>
-                <a href="#skills" class="text-gray-300 hover:text-indigo-400 transition duration-300">Skills</a>
-                <a href="#education" class="text-gray-300 hover:text-indigo-400 transition duration-300">Education</a>
-                <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition duration-300">Contact</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-indigo-400 focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black px-6 pb-4">
-            <a href="#about" class="block py-2 text-gray-300 hover:text-indigo-400">About</a>
-            <a href="#experience" class="block py-2 text-gray-300 hover:text-indigo-400">Experience</a>
-            <a href="#skills" class="block py-2 text-gray-300 hover:text-indigo-400">Skills</a>
-            <a href="#education" class="block py-2 text-gray-300 hover:text-indigo-400">Education</a>
-            <a href="#contact" class="block py-2 text-gray-300 hover:text-indigo-400">Contact</a>
-        </div>
-    </header>
+    <!-- Header & Navigation -->
+    <header class="bg-black/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-400">Akshay Pathak</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="text-gray-300 hover:text-indigo-400 transition duration-300">About</a>
+                <a href="#experience" class="text-gray-300 hover:text-indigo-400 transition duration-300">Experience</a>
+                <a href="#skills" class="text-gray-300 hover:text-indigo-400 transition duration-300">Skills</a>
+                <a href="#education" class="text-gray-300 hover:text-indigo-400 transition duration-300">Education</a>
+                <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition duration-300">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-indigo-400 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black px-6 pb-4">
+            <a href="#about" class="block py-2 text-gray-300 hover:text-indigo-400">About</a>
+            <a href="#experience" class="block py-2 text-gray-300 hover:text-indigo-400">Experience</a>
+            <a href="#skills" class="block py-2 text-gray-300 hover:text-indigo-400">Skills</a>
+            <a href="#education" class="block py-2 text-gray-300 hover:text-indigo-400">Education</a>
+            <a href="#contact" class="block py-2 text-gray-300 hover:text-indigo-400">Contact</a>
+        </div>
+    </header>
 
-    <main class="container mx-auto px-6 py-12">
+    <main class="container mx-auto px-6 py-12">
 
-        <!-- Hero Section -->
-        <section id="home" class="text-center py-20">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4">Akshay Pathak</h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-8">M.Sc. Information Technology | Cloud & Industrial Automation Enthusiast</p>
-            <div class="flex justify-center space-x-6">
-                <a href="https://www.linkedin.com/in/akshay-s-pathak" target="_blank" class="text-indigo-400 hover:text-indigo-300 transition duration-300 text-3xl"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/akshay-pathak" target="_blank" class="text-indigo-400 hover:text-indigo-300 transition duration-300 text-3xl"><i class="fab fa-github"></i></a>
-                <a href="mailto:aspathak26@gmail.com" class="text-indigo-400 hover:text-indigo-300 transition duration-300 text-3xl"><i class="fas fa-envelope"></i></a>
-            </div>
-        </section>
+        <!-- Hero Section -->
+        <section id="home" class="text-center py-20">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4">Akshay Pathak</h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-8">M.Sc. Information Technology | Industrial Automation & Software Development</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/akshay-s-pathak" target="_blank" class="text-indigo-400 hover:text-indigo-300 transition duration-300 text-3xl"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/akshay-pathak" target="_blank" class="text-indigo-400 hover:text-indigo-300 transition duration-300 text-3xl"><i class="fab fa-github"></i></a>
+                <a href="mailto:aspathak26@gmail.com" class="text-indigo-400 hover:text-indigo-300 transition duration-300 text-3xl"><i class="fas fa-envelope"></i></a>
+            </div>
+        </section>
 
-        <!-- About Me Section -->
-        <section id="about" class="py-20 border-t border-gray-800">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">About Me</h2>
-            <div class="max-w-4xl mx-auto text-lg text-gray-400 leading-relaxed text-center">
-                <p>
-                    I am an Information Technology engineer, currently pursuing my Master's in Information Technology (INFOTECH) at the University of Stuttgart. My passion lies at the intersection of industrial automation, software development, and cloud technologies. With hands-on experience in Python and Julia, I've had the opportunity to build smart factory solutions, create efficient data processing pipelines, and implement robust DevOps practices. I thrive in dynamic environments and enjoy tackling complex challenges across various domains, including automotive, manufacturing, and energy systems. My journey has taken me from understanding the fundamentals of shop-floor digitization to architecting and deploying scalable cloud solutions.
-                </p>
-            </div>
-        </section>
+        <!-- About Me Section -->
+        <section id="about" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">About Me</h2>
+            <div class="max-w-4xl mx-auto text-lg text-gray-400 leading-relaxed text-center">
+                <p>
+                    I am an Information Technology professional currently pursuing my Master's in Information Technology (INFOTECH) at the University of Stuttgart. With a strong foundation in electronics engineering and hands-on experience in industrial automation, I specialize in bridging the gap between operational technology (OT) and information technology (IT). My expertise spans from shop-floor digitization and smart factory solutions to cloud technologies and software development. I have worked extensively with Python, Julia, and various industrial protocols like OPC UA and MQTT, creating efficient data processing pipelines and implementing robust DevOps practices across automotive, manufacturing, and energy sectors.
+                </p>
+            </div>
+        </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="py-20 border-t border-gray-800">
-            <h2 class="text-4xl font-bold text-center mb-4 text-white">My Professional Journey</h2>
-            <p class="text-center text-gray-500 mb-12">(Scroll horizontally to view all experiences)</p>
-            <div class="timeline-container flex overflow-x-auto space-x-8 pb-8 px-4">
-                
-                <!-- Master Thesis -->
-                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800">
-                    <p class="text-sm text-gray-500 mb-1">Feb 2025 - Present</p>
-                    <h3 class="text-xl font-semibold text-white">Master Thesis Student</h3>
-                    <p class="text-md text-indigo-400 font-medium mb-3">IKR, Stuttgart</p>
-                    <p class="text-gray-400 text-sm">Developing a Julia-based application to bridge the MINDFul IBN framework with the TeraFlowSDN controller, involving Kubernetes, and learning Julia to map network intents.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="bg-indigo-900/50 text-indigo-300 text-xs font-medium px-2 py-0.5 rounded">Julia</span>
-                        <span class="bg-indigo-900/50 text-indigo-300 text-xs font-medium px-2 py-0.5 rounded">SDN</span>
-                        <span class="bg-indigo-900/50 text-indigo-300 text-xs font-medium px-2 py-0.5 rounded">Kubernetes</span>
-                    </div>
-                </div>
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">My Professional Journey</h2>
+            <p class="text-center text-gray-500 mb-12">From Zero to SDN Expert - My Learning Path Through Industrial Automation</p>
+            
+            <!-- Learning Path Overview -->
+            <div class="max-w-4xl mx-auto mb-16 bg-gray-900/50 p-6 rounded-lg border border-gray-800">
+                <h3 class="text-xl font-semibold text-white mb-4">🚀 My Growth Trajectory</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <div class="text-2xl mb-2">🏭</div>
+                        <p class="text-sm text-gray-300">Started with basic factory digitization at Parker Hannifin</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <div class="text-2xl mb-2">📊</div>
+                        <p class="text-sm text-gray-300">Built end-to-end data pipelines at Fraunhofer IPA</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <div class="text-2xl mb-2">☁️</div>
+                        <p class="text-sm text-gray-300">Mastered cloud DevOps at Mercedes-Benz</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <div class="text-2xl mb-2">🌐</div>
+                        <p class="text-sm text-gray-300">Learned Julia & SDN for my master thesis</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-container flex overflow-x-auto space-x-8 pb-8 px-4">
+                
+                <!-- Master Thesis -->
+                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <p class="text-sm text-gray-500">Feb 2025 - Present</p>
+                        <div class="tech-icon">
+                            <i class="fab fa-julia"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white">Master Thesis Student</h3>
+                    <p class="text-md text-indigo-400 font-medium mb-3">IKR, University of Stuttgart</p>
+                    
+                    <div class="expandable" id="thesis-desc">
+                        <p class="text-gray-400 text-sm mb-3">Bridging the MINDFul Intent-Based Networking (IBN) framework with TeraFlowSDN controller using Julia. Breaking down high-level network intents (e.g., "connect NY with London at 10Gbps") into actionable lower-level intents for SDN devices.</p>
+                        
+                        <div class="learning-indicator text-sm text-green-300 mb-2">
+                            🎯 Learned Julia from scratch in just a few weeks
+                        </div>
+                        <div class="learning-indicator text-sm text-green-300 mb-2">
+                            🔧 Mastered Kubernetes microservices deployment
+                        </div>
+                        <div class="learning-indicator text-sm text-green-300 mb-3">
+                            🌐 Deep-dived into SDN and network automation concepts
+                        </div>
+                        
+                        <p class="text-gray-400 text-sm mb-3"><strong>Technical Challenge:</strong> Developed Julia-based HTTP APIs using Oxygen.jl, handled Protobuf schemas, and created OpenConfig-compatible mappings for seamless device configuration.</p>
+                    </div>
+                    
+                    <button onclick="toggleExpand('thesis-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
+                    
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">Julia</span>
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">SDN</span>
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">Kubernetes</span>
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">IBN</span>
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">OpenConfig</span>
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">HTTP APIs</span>
+                    </div>
+                </div>
 
-                <!-- plus10 -->
-                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800">
-                    <p class="text-sm text-gray-500 mb-1">Sep 2024 - Present</p>
-                    <h3 class="text-xl font-semibold text-white">Working Student</h3>
-                    <p class="text-md text-indigo-400 font-medium mb-3">plus10 GmbH, Stuttgart</p>
-                    <p class="text-gray-400 text-sm">Automating factory PLC project integration into the plus10 SaaS platform using Python scripts and auto-mapping tools based on OPC UA specifications to accelerate client onboarding.</p>
-                     <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="bg-green-900/50 text-green-300 text-xs font-medium px-2 py-0.5 rounded">Python</span>
-                        <span class="bg-green-900/50 text-green-300 text-xs font-medium px-2 py-0.5 rounded">OPC UA</span>
-                        <span class="bg-green-900/50 text-green-300 text-xs font-medium px-2 py-0.5 rounded">Automation</span>
-                    </div>
-                </div>
+                <!-- plus10 -->
+                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <p class="text-sm text-gray-500">Sep 2024 - Present</p>
+                        <div class="tech-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white">Working Student</h3>
+                    <p class="text-md text-indigo-400 font-medium mb-3">plus10 GmbH, Stuttgart</p>
+                    
+                    <div class="expandable" id="plus10-desc">
+                        <p class="text-gray-400 text-sm mb-3">Automating factory PLC project integration into plus10's SaaS platform. Every client (beer producers, medical device manufacturers, etc.) has different PLCs and configurations - my job is to create Python scripts that can handle this diversity.</p>
+                        
+                        <div class="learning-indicator text-sm text-yellow-300 mb-2">
+                            🏭 Understanding diverse industrial automation systems
+                        </div>
+                        <div class="learning-indicator text-sm text-yellow-300 mb-2">
+                            🔄 Creating flexible automation scripts for different PLC projects
+                        </div>
+                        <div class="learning-indicator text-sm text-yellow-300 mb-3">
+                            📊 OPC UA specifications and auto-mapping tools
+                        </div>
+                        
+                        <p class="text-gray-400 text-sm mb-3"><strong>Key Challenge:</strong> The main challenge is that "everything is different all the time" - no single script can handle all scenarios, but the goal is to automate as much as possible to accelerate client onboarding.</p>
+                    </div>
+                    
+                    <button onclick="toggleExpand('plus10-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
+                    
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="achievement-badge bg-green-900/50 text-green-300">Python</span>
+                        <span class="achievement-badge bg-green-900/50 text-green-300">OPC UA</span>
+                        <span class="achievement-badge bg-green-900/50 text-green-300">SaaS</span>
+                        <span class="achievement-badge bg-green-900/50 text-green-300">PLC Integration</span>
+                        <span class="achievement-badge bg-green-900/50 text-green-300">Auto-mapping</span>
+                    </div>
+                </div>
 
-                <!-- Mercedes-Benz -->
-                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800">
-                    <p class="text-sm text-gray-500 mb-1">Mar 2024 - Aug 2024</p>
-                    <h3 class="text-xl font-semibold text-white">Working Student - Data & Services</h3>
-                    <p class="text-md text-indigo-400 font-medium mb-3">Mercedes-Benz AG, Stuttgart</p>
-                    <p class="text-gray-400 text-sm">Developed a full-stack solution with Python, Azure Static Web App, and a CI/CD pipeline to automate role renewals for the Mercedes Me Charge Platform.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="bg-blue-900/50 text-blue-300 text-xs font-medium px-2 py-0.5 rounded">Python</span>
-                        <span class="bg-blue-900/50 text-blue-300 text-xs font-medium px-2 py-0.5 rounded">Azure DevOps</span>
-                        <span class="bg-blue-900/50 text-blue-300 text-xs font-medium px-2 py-0.5 rounded">CI/CD</span>
-                    </div>
-                </div>
-                 
-                 <!-- IER -->
-                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800">
-                    <p class="text-sm text-gray-500 mb-1">Feb 2025</p>
-                    <h3 class="text-xl font-semibold text-white">Studentische Hilfskraft</h3>
-                    <p class="text-md text-indigo-400 font-medium mb-3">IER, Stuttgart</p>
-                    <p class="text-gray-400 text-sm">Engineered Python-based ETL tools to automate the conversion of energy data from Excel and REST APIs into a format compatible with VEDA modeling software.</p>
-                     <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="bg-yellow-900/50 text-yellow-300 text-xs font-medium px-2 py-0.5 rounded">Python</span>
-                        <span class="bg-yellow-900/50 text-yellow-300 text-xs font-medium px-2 py-0.5 rounded">ETL</span>
-                        <span class="bg-yellow-900/50 text-yellow-300 text-xs font-medium px-2 py-0.5 rounded">Data Modeling</span>
-                    </div>
-                </div>
+                <!-- Mercedes-Benz -->
+                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <p class="text-sm text-gray-500">Mar 2024 - Aug 2024</p>
+                        <div class="tech-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white">Working Student - Data & Services</h3>
+                    <p class="text-md text-indigo-400 font-medium mb-3">Mercedes-Benz AG, Stuttgart</p>
+                    
+                    <div class="expandable" id="mercedes-desc">
+                        <p class="text-gray-400 text-sm mb-3">Developed cloud DevOps solutions for the Mercedes Me Charge Platform. Built a Python-based automation tool to manage role renewals across multiple microservices, replacing manual processes with automated Azure DevOps pipelines.</p>
+                        
+                        <div class="learning-indicator text-sm text-blue-300 mb-2">
+                            🔄 API integration with OpenCharge platform and OCPI v2.1
+                        </div>
+                        <div class="learning-indicator text-sm text-blue-300 mb-2">
+                            ⚡ Full-stack development with Azure Static Web Apps
+                        </div>
+                        <div class="learning-indicator text-sm text-blue-300 mb-2">
+                            🚀 CI/CD pipeline implementation in Azure DevOps
+                        </div>
+                        <div class="learning-indicator text-sm text-blue-300 mb-3">
+                            🎨 Frontend development with interactive dashboards
+                        </div>
+                        
+                        <p class="text-gray-400 text-sm mb-3"><strong>Problem Solved:</strong> Automated the tedious manual process of renewing expiring roles in Mercedes' internal systems by creating a dashboard that pulls data from internal databases and sends renewal requests via Mercedes' internal APIs.</p>
+                    </div>
+                    
+                    <button onclick="toggleExpand('mercedes-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
+                    
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">Python</span>
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">Azure DevOps</span>
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">CI/CD</span>
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">Full-Stack</span>
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">OpenAPI</span>
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">OCPI</span>
+                    </div>
+                </div>
+                 
+                <!-- IER -->
+                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <p class="text-sm text-gray-500">Oct 2023 - Feb 2024</p>
+                        <div class="tech-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white">Studentische Hilfskraft</h3>
+                    <p class="text-md text-indigo-400 font-medium mb-3">IER, University of Stuttgart</p>
+                    
+                    <div class="expandable" id="ier-desc">
+                        <p class="text-gray-400 text-sm mb-3">Engineered Python-based ETL tools for energy system analysis. Converted data from SEDOS format to TIMES format, making it compatible with VEDA modeling software for energy system research.</p>
+                        
+                        <div class="learning-indicator text-sm text-yellow-300 mb-2">
+                            📊 Data format transformation (SEDOS to TIMES)
+                        </div>
+                        <div class="learning-indicator text-sm text-yellow-300 mb-2">
+                            🔌 Integration with Open Energy Platform APIs
+                        </div>
+                        <div class="learning-indicator text-sm text-yellow-300 mb-3">
+                            🛠️ Excel data processing and mapping algorithms
+                        </div>
+                        
+                        <p class="text-gray-400 text-sm mb-3"><strong>Focus:</strong> Pure data handling and processing - extracting energy data from various sources (Excel files, APIs) and transforming it into formats acceptable by specialized energy modeling software.</p>
+                    </div>
+                    
+                    <button onclick="toggleExpand('ier-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
+                    
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">Python</span>
+                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">ETL</span>
+                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">REST APIs</span>
+                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">VEDA</span>
+                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">Energy Modeling</span>
+                    </div>
+                </div>
 
-                <!-- Fraunhofer IPA -->
-                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800">
-                    <p class="text-sm text-gray-500 mb-1">Apr 2022 - Jan 2024</p>
-                    <h3 class="text-xl font-semibold text-white">Wissenschaftliche Hilfskraft</h3>
-                    <p class="text-md text-indigo-400 font-medium mb-3">Fraunhofer IPA, Stuttgart</p>
-                    <p class="text-gray-400 text-sm">Built an end-to-end analytics pipeline for a 5G smart factory using MQTT, Python, and a containerized TIG stack (Docker), sending real-time data to Azure IoT Hub.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="bg-red-900/50 text-red-300 text-xs font-medium px-2 py-0.5 rounded">Python</span>
-                        <span class="bg-red-900/50 text-red-300 text-xs font-medium px-2 py-0.5 rounded">Docker</span>
-                        <span class="bg-red-900/50 text-red-300 text-xs font-medium px-2 py-0.5 rounded">MQTT</span>
-                    </div>
-                </div>
+                <!-- Fraunhofer IPA -->
+                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <p class="text-sm text-gray-500">Apr 2022 - Jan 2024</p>
+                        <div class="tech-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white">Wissenschaftliche Hilfskraft</h3>
+                    <p class="text-md text-indigo-400 font-medium mb-3">Fraunhofer IPA, Stuttgart</p>
+                    
+                    <div class="expandable" id="fraunhofer-desc">
+                        <p class="text-gray-400 text-sm mb-3">Built an end-to-end analytics pipeline for a 5G smart factory project with multiple industry partners. This was where I truly learned the fundamentals of industrial IoT and containerized deployments.</p>
+                        
+                        <div class="learning-indicator text-sm text-red-300 mb-2">
+                            🏗️ Started from basics: Linux, VMs, Docker fundamentals
+                        </div>
+                        <div class="learning-indicator text-sm text-red-300 mb-2">
+                            📡 MQTT broker setup and Python client-server connections
+                        </div>
+                        <div class="learning-indicator text-sm text-red-300 mb-2">
+                            📊 Complete TIG stack: Telegraf, InfluxDB, Grafana in Docker Compose
+                        </div>
+                        <div class="learning-indicator text-sm text-red-300 mb-2">
+                            ☁️ Real-time data streaming to Azure IoT Hub
+                        </div>
+                        <div class="learning-indicator text-sm text-red-300 mb-3">
+                            🔧 RevolutionPi systems integration for real-time monitoring
+                        </div>
+                        
+                        <p class="text-gray-400 text-sm mb-3"><strong>Learning Journey:</strong> This role was transformative - I learned Docker containerization, MQTT protocols, time-series databases, and real-time data visualization all from scratch. Built production-ready dashboards for factory monitoring.</p>
+                    </div>
+                    
+                    <button onclick="toggleExpand('fraunhofer-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
+                    
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="achievement-badge bg-red-900/50 text-red-300">Python</span>
+                        <span class="achievement-badge bg-red-900/50 text-red-300">Docker</span>
+                        <span class="achievement-badge bg-red-900/50 text-red-300">MQTT</span>
+                        <span class="achievement-badge bg-red-900/50 text-red-300">5G</span>
+                        <span class="achievement-badge bg-red-900/50 text-red-300">TIG Stack</span>
+                        <span class="achievement-badge bg-red-900/50 text-red-300">Azure IoT</span>
+                    </div>
+                </div>
 
-                <!-- Parker Hannifin -->
-                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800">
-                    <p class="text-sm text-gray-500 mb-1">Apr 2022 - Mar 2023</p>
-                    <h3 class="text-xl font-semibold text-white">Working Student</h3>
-                    <p class="text-md text-indigo-400 font-medium mb-3">Parker Hannifin GmbH, Bietigheim</p>
-                    <p class="text-gray-400 text-sm">Supported a factory digitization project, learning the data flow from OT to IT systems and visualizing OEE metrics in Power BI dashboards.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="bg-purple-900/50 text-purple-300 text-xs font-medium px-2 py-0.5 rounded">Power BI</span>
-                        <span class="bg-purple-900/50 text-purple-300 text-xs font-medium px-2 py-0.5 rounded">SharePoint</span>
-                        <span class="bg-purple-900/50 text-purple-300 text-xs font-medium px-2 py-0.5 rounded">OPC UA</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <!-- Parker Hannifin -->
+                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <p class="text-sm text-gray-500">Apr 2022 - Mar 2023</p>
+                        <div class="tech-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white">Working Student</h3>
+                    <p class="text-md text-indigo-400 font-medium mb-3">Parker Hannifin GmbH, Bietigheim-Bissingen</p>
+                    
+                    <div class="expandable" id="parker-desc">
+                        <p class="text-gray-400 text-sm mb-3">My entry into industrial digitization! Started with a factory that wanted to replicate GE's digitization success in another plant. This is where I learned the fundamentals of OT-IT integration.</p>
+                        
+                        <div class="learning-indicator text-sm text-purple-300 mb-2">
+                            🏭 First exposure to factory digitization concepts
+                        </div>
+                        <div class="learning-indicator text-sm text-purple-300 mb-2">
+                            🔗 Understanding machine-to-historian data flows
+                        </div>
+                        <div class="learning-indicator text-sm text-purple-300 mb-2">
+                            📊 Power BI dashboard development for OEE metrics
+                        </div>
+                        <div class="learning-indicator text-sm text-purple-300 mb-3">
+                            🎯 End-to-end process understanding: from shop floor to analytics
+                        </div>
+                        
+                        <p class="text-gray-400 text-sm mb-3"><strong>Starting Point:</strong> This was my first real exposure to industrial automation. I learned how data flows from machines through historians to business intelligence dashboards. Didn't work on many practical implementations but gained crucial foundational understanding.</p>
+                    </div>
+                    
+                    <button onclick="toggleExpand('parker-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
+                    
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="achievement-badge bg-purple-900/50 text-purple-300">Power BI</span>
+                        <span class="achievement-badge bg-purple-900/50 text-purple-300">SharePoint</span>
+                        <span class="achievement-badge bg-purple-900/50 text-purple-300">OPC UA</span>
+                        <span class="achievement-badge bg-purple-900/50 text-purple-300">OEE</span>
+                        <span class="achievement-badge bg-purple-900/50 text-purple-300">Data Historians</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 border-t border-gray-800">
-            <h2 class="text-4xl font-bold text-center mb-16 text-white">Technical Skills</h2>
-            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Skill cards -->
-                 <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
-                    <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-code"></i></div>
-                    <h3 class="text-2xl font-semibold text-white mb-3">Programming</h3>
-                    <p class="text-gray-400">Python, Julia, C, C++, HTML, JavaScript</p>
-                </div>
-                <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
-                    <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-server"></i></div>
-                    <h3 class="text-2xl font-semibold text-white mb-3">Data & DevOps</h3>
-                    <p class="text-gray-400">Docker, Kubernetes, Git, InfluxDB, Azure DevOps, CI/CD, REST APIs</p>
-                </div>
-                <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
-                    <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-industry"></i></div>
-                    <h3 class="text-2xl font-semibold text-white mb-3">Industrial Tech</h3>
-                    <p class="text-gray-400">OPC-UA, MQTT, SDN, IBN, Siemens TIA Portal</p>
-                </div>
-                <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
-                     <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-cloud"></i></div>
-                    <h3 class="text-2xl font-semibold text-white mb-3">Cloud</h3>
-                    <p class="text-gray-400">Azure IoT Hub, Azure Static Web Apps</p>
-                </div>
-                <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
-                    <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-chart-bar"></i></div>
-                    <h3 class="text-2xl font-semibold text-white mb-3">Visualization</h3>
-                    <p class="text-gray-400">PowerBI, Grafana</p>
-                </div>
-                <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
-                    <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-tools"></i></div>
-                    <h3 class="text-2xl font-semibold text-white mb-3">Other Tools</h3>
-                    <p class="text-gray-400">MATLAB/Simulink, LabVIEW, MS Office Suite, CodeSys</p>
-                </div>
-            </div>
-        </section>
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-center mb-16 text-white">Technical Skills</h2>
+            <div class="max-w-6xl mx-auto">
+                <!-- Programming Languages -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
+                        <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-code"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Programming Languages</h3>
+                        <p class="text-gray-400">Python, Julia, C, C++, HTML, CSS, JavaScript, MATLAB</p>
+                    </div>
+                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
+                        <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-industry"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Industrial Automation</h3>
+                        <p class="text-gray-400">OPC-UA, MQTT, Siemens TIA Portal, CodeSys, PLC Programming, Industrial IoT</p>
+                    </div>
+                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
+                        <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-cloud"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Cloud & DevOps</h3>
+                        <p class="text-gray-400">Azure IoT Hub, Azure Static Web Apps, Docker, Kubernetes, Git, CI/CD, Azure DevOps</p>
+                    </div>
+                </div>
+                
+                <!-- Second Row -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
+                        <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-database"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Data & Analytics</h3>
+                        <p class="text-gray-400">InfluxDB, REST APIs, ETL Pipelines, Data Processing, Time Series Analysis</p>
+                    </div>
+                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
+                        <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-chart-bar"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Visualization & BI</h3>
+                        <p class="text-gray-400">Power BI, Grafana, Tableau, Data Visualization, Dashboard Development</p>
+                    </div>
+                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
+                        <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-network-wired"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Networking & SDN</h3>
+                        <p class="text-gray-400">Software Defined Networking (SDN), Intent-Based Networking (IBN), Network Protocols, 5G</p>
+                    </div>
+                </div>
 
-        <!-- Education Section -->
-        <section id="education" class="py-20 border-t border-gray-800">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">Education</h2>
-            <div class="max-w-4xl mx-auto space-y-8">
-                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                    <p class="text-gray-500">Oct 2021 - Present</p>
-                    <h3 class="text-2xl font-semibold text-white">M.Sc. Information Technology (INFOTECH)</h3>
-                    <p class="text-lg text-indigo-400">University of Stuttgart, Germany</p>
-                    <p class="text-gray-400 mt-2">Current Grade: 2.4</p>
-                </div>
-                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                    <p class="text-gray-500">Aug 2017 - May 2021</p>
-                    <h3 class="text-2xl font-semibold text-white">B.Tech. Electronics</h3>
-                    <p class="text-lg text-indigo-400">K. J. Somaiya College of Engineering, University of Mumbai, India</p>
-                    <p class="text-gray-400 mt-2">Grade: 8.94/10</p>
-                </div>
-            </div>
-        </section>
+                <!-- Third Row -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
+                        <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-microchip"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Electronics & Embedded</h3>
+                        <p class="text-gray-400">LabVIEW, Simulink, Embedded Systems, Control Systems, Hardware-Software Integration</p>
+                    </div>
+                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
+                        <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-tools"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Development Tools</h3>
+                        <p class="text-gray-400">MS Office Suite, SharePoint, Version Control, Agile Methodologies, Project Management</p>
+                    </div>
+                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
+                        <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-cogs"></i></div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Systems Integration</h3>
+                        <p class="text-gray-400">OT/IT Integration, Smart Factory Solutions, SaaS Platforms, Manufacturing Systems</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 border-t border-gray-800">
-            <h2 class="text-4xl font-bold text-center mb-4 text-white">Get In Touch</h2>
-            <p class="text-lg text-gray-400 text-center max-w-2xl mx-auto mb-12">I'm always open to discussing new opportunities and collaborations. Feel free to reach out!</p>
-            <div class="text-center">
-                 <a href="mailto:aspathak26@gmail.com" class="inline-block bg-indigo-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-indigo-500 transition duration-300 shadow-lg shadow-indigo-500/30">
-                    Say Hello <i class="fas fa-paper-plane ml-2"></i>
-                </a>
-            </div>
-        </section>
+        <!-- Education Section -->
+        <section id="education" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">Education</h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                    <p class="text-gray-500">Oct 2021 - Present</p>
+                    <h3 class="text-2xl font-semibold text-white">M.Sc. Information Technology (INFOTECH)</h3>
+                    <p class="text-lg text-indigo-400">University of Stuttgart, Germany</p>
+                    <p class="text-gray-400 mt-2">Current Grade: 2.4 | Expected Graduation: 2025</p>
+                    <p class="text-gray-400 text-sm mt-2">Specialization: Industrial Automation, Software Defined Networking, and Cloud Technologies</p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                    <p class="text-gray-500">Aug 2017 - May 2021</p>
+                    <h3 class="text-2xl font-semibold text-white">B.Tech. Electronics Engineering</h3>
+                    <p class="text-lg text-indigo-400">K. J. Somaiya College of Engineering, University of Mumbai, India</p>
+                    <p class="text-gray-400 mt-2">CGPA: 8.94/10 (First Class with Distinction)</p>
+                    <p class="text-gray-400 text-sm mt-2">Specialization: Electronics and Telecommunications, Control Systems, Embedded Systems</p>
+                </div>
+            </div>
+        </section>
 
-    </main>
-    
-    <!-- Footer -->
-    <footer class="bg-black text-white py-8 border-t border-gray-800">
-        <div class="container mx-auto px-6 text-center">
-             <div class="flex justify-center space-x-6 mb-4">
-                <a href="https://www.linkedin.com/in/akshay-s-pathak" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/akshay-pathak" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-github"></i></a>
-                <a href="mailto:aspathak26@gmail.com" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fas fa-envelope"></i></a>
-            </div>
-            <p class="text-gray-500">&copy; 2025 Akshay Pathak. All Rights Reserved.</p>
-        </div>
-    </footer>
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">Get In Touch</h2>
+            <p class="text-lg text-gray-400 text-center max-w-2xl mx-auto mb-12">I'm always open to discussing new opportunities in industrial automation, software development, and cloud technologies. Feel free to reach out!</p>
+            <div class="text-center">
+                 <a href="mailto:aspathak26@gmail.com" class="inline-block bg-indigo-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-indigo-500 transition duration-300 shadow-lg shadow-indigo-500/30">
+                    Say Hello <i class="fas fa-paper-plane ml-2"></i>
+                </a>
+            </div>
+        </section>
 
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+             <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/akshay-s-pathak" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/akshay-pathak" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-github"></i></a>
+                <a href="mailto:aspathak26@gmail.com" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="text-gray-500">&copy; 2025 Akshay Pathak. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        // Close mobile menu when a link is clicked
-        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
-        for (let link of mobileMenuLinks) {
-            link.addEventListener('click', () => {
-                 mobileMenu.classList.add('hidden');
-            });
-        }
-    </script>
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                 mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Toggle expandable sections
+        function toggleExpand(id) {
+            const element = document.getElementById(id);
+            const button = element.nextElementSibling;
+            
+            if (element.classList.contains('expanded')) {
+                element.classList.remove('expanded');
+                button.textContent = 'Read more...';
+            } else {
+                element.classList.add('expanded');
+                button.textContent = 'Read less...';
+            }
+        }
+    </script>
 </body>
 </html>
