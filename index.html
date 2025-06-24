@@ -109,24 +109,24 @@
     <!-- Header & Navigation -->
     <header class="bg-black/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-indigo-400">Akshay Pathak</a>
-            <div class="hidden md:flex space-x-6 items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-400">Akshay Pathak</a>            <div class="hidden md:flex space-x-6 items-center">
                 <a href="#about" class="text-gray-300 hover:text-indigo-400 transition duration-300">About</a>
                 <a href="#experience" class="text-gray-300 hover:text-indigo-400 transition duration-300">Experience</a>
                 <a href="#skills" class="text-gray-300 hover:text-indigo-400 transition duration-300">Skills</a>
                 <a href="#education" class="text-gray-300 hover:text-indigo-400 transition duration-300">Education</a>
+                <a href="#languages" class="text-gray-300 hover:text-indigo-400 transition duration-300">Languages</a>
                 <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition duration-300">Contact</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-indigo-400 focus:outline-none">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black px-6 pb-4">
+        <!-- Mobile Menu -->        <div id="mobile-menu" class="hidden md:hidden bg-black px-6 pb-4">
             <a href="#about" class="block py-2 text-gray-300 hover:text-indigo-400">About</a>
             <a href="#experience" class="block py-2 text-gray-300 hover:text-indigo-400">Experience</a>
             <a href="#skills" class="block py-2 text-gray-300 hover:text-indigo-400">Skills</a>
             <a href="#education" class="block py-2 text-gray-300 hover:text-indigo-400">Education</a>
+            <a href="#languages" class="block py-2 text-gray-300 hover:text-indigo-400">Languages</a>
             <a href="#contact" class="block py-2 text-gray-300 hover:text-indigo-400">Contact</a>
         </div>
     </header>
@@ -156,192 +156,89 @@
 
         <!-- Experience Section -->
         <section id="experience" class="py-20 border-t border-gray-800">
-            <h2 class="text-4xl font-bold text-center mb-4 text-white">My Professional Journey</h2> 
-            
-            <!-- Learning Path Overview -->
-            <div class="max-w-4xl mx-auto mb-16 bg-gray-900/50 p-6 rounded-lg border border-gray-800">
-                <h3 class="text-xl font-semibold text-white mb-4">🚀 My Growth Trajectory</h3>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
-                    <div class="bg-gray-800 p-4 rounded-lg">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">My Professional Journey</h2>            <!-- Learning Path Overview -->
+            <div class="max-w-6xl mx-auto mb-16 bg-gray-900/50 p-6 rounded-lg border border-gray-800">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 text-center">
+                    <a href="#parker-experience" class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors cursor-pointer">
                         <div class="text-2xl mb-2">🏭</div>
-                        <p class="text-sm text-gray-300">Started with basic factory digitization at Parker Hannifin</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <p class="text-xs text-indigo-400 font-medium mb-1">Parker Hannifin</p>
+                        <p class="text-sm text-gray-300">Learned OT-IT integration and built Power BI dashboards for factory digitization.</p>
+                    </a>
+                    <a href="#fraunhofer-experience" class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors cursor-pointer">
                         <div class="text-2xl mb-2">📊</div>
-                        <p class="text-sm text-gray-300">Built end-to-end data pipelines at Fraunhofer IPA</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <p class="text-xs text-indigo-400 font-medium mb-1">Fraunhofer IPA</p>
+                        <p class="text-sm text-gray-300">Built end-to-end IoT pipelines using Docker, MQTT, and TIG stack for 5G factories.</p>
+                    </a>
+                    <a href="#ier-experience" class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors cursor-pointer">
+                        <div class="text-2xl mb-2">⚡</div>
+                        <p class="text-xs text-indigo-400 font-medium mb-1">IER, Uni Stuttgart</p>
+                        <p class="text-sm text-gray-300">Developed ETL tools to transform energy data formats for modeling applications.</p>
+                    </a>
+                    <a href="#mercedes-experience" class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors cursor-pointer">
                         <div class="text-2xl mb-2">☁️</div>
-                        <p class="text-sm text-gray-300">Mastered cloud DevOps at Mercedes-Benz</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <p class="text-xs text-indigo-400 font-medium mb-1">Mercedes-Benz AG</p>
+                        <p class="text-sm text-gray-300">Created full-stack applications with Azure DevOps and CI/CD pipelines.</p>
+                    </a>
+                    <a href="#plus10-experience" class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors cursor-pointer">
+                        <div class="text-2xl mb-2">🤖</div>
+                        <p class="text-xs text-indigo-400 font-medium mb-1">plus10 GmbH</p>
+                        <p class="text-sm text-gray-300">Automated PLC project integration into SaaS platforms for diverse manufacturers.</p>
+                    </a>
+                    <a href="#thesis-experience" class="bg-indigo-900/30 p-4 rounded-lg border border-indigo-500/30 hover:bg-indigo-900/40 transition-colors cursor-pointer">
                         <div class="text-2xl mb-2">🌐</div>
-                        <p class="text-sm text-gray-300">Learned Julia & SDN for my master thesis</p>
-                    </div>
+                        <p class="text-xs text-indigo-400 font-medium mb-1">IKR, Uni Stuttgart</p>
+                        <p class="text-sm text-indigo-300 font-medium">Learning Julia and SDN to bridge network intent frameworks with controllers.</p>
+                    </a>
                 </div>
             </div>
-            
-            <div class="timeline-container flex overflow-x-auto space-x-8 pb-8 px-4">
+              <div class="timeline-container flex overflow-x-auto space-x-8 pb-8 px-4">
                 
-                <!-- Master Thesis -->
-                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
+                <!-- Parker Hannifin -->
+                <div id="parker-experience" class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
                     <div class="flex items-center justify-between mb-3">
-                        <p class="text-sm text-gray-500">Feb 2025 - Present</p>
+                        <p class="text-sm text-gray-500">Apr 2022 - Mar 2023</p>
                         <div class="tech-icon">
-                            <i class="fab fa-julia"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white">Master Thesis Student</h3>
-                    <p class="text-md text-indigo-400 font-medium mb-3">IKR, University of Stuttgart</p>
-                    
-                    <div class="expandable" id="thesis-desc">
-                        <p class="text-gray-400 text-sm mb-3">Bridging the MINDFul Intent-Based Networking (IBN) framework with TeraFlowSDN controller using Julia. Breaking down high-level network intents (e.g., "connect NY with London at 10Gbps") into actionable lower-level intents for SDN devices.</p>
-                        
-                        <div class="learning-indicator text-sm text-green-300 mb-2">
-                            🎯 Learned Julia from scratch in just a few weeks
-                        </div>
-                        <div class="learning-indicator text-sm text-green-300 mb-2">
-                            🔧 Mastered Kubernetes microservices deployment
-                        </div>
-                        <div class="learning-indicator text-sm text-green-300 mb-3">
-                            🌐 Deep-dived into SDN and network automation concepts
-                        </div>
-                        
-                        <p class="text-gray-400 text-sm mb-3"><strong>Technical Challenge:</strong> Developed Julia-based HTTP APIs using Oxygen.jl, handled Protobuf schemas, and created OpenConfig-compatible mappings for seamless device configuration.</p>
-                    </div>
-                    
-                    <button onclick="toggleExpand('thesis-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
-                    
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">Julia</span>
-                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">SDN</span>
-                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">Kubernetes</span>
-                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">IBN</span>
-                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">OpenConfig</span>
-                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">HTTP APIs</span>
-                    </div>
-                </div>
-
-                <!-- plus10 -->
-                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
-                    <div class="flex items-center justify-between mb-3">
-                        <p class="text-sm text-gray-500">Sep 2024 - Present</p>
-                        <div class="tech-icon">
-                            <i class="fas fa-robot"></i>
+                            <i class="fas fa-chart-bar"></i>
                         </div>
                     </div>
                     <h3 class="text-xl font-semibold text-white">Working Student</h3>
-                    <p class="text-md text-indigo-400 font-medium mb-3">plus10 GmbH, Stuttgart</p>
+                    <p class="text-md text-indigo-400 font-medium mb-3">Parker Hannifin GmbH, Bietigheim-Bissingen</p>
                     
-                    <div class="expandable" id="plus10-desc">
-                        <p class="text-gray-400 text-sm mb-3">Automating factory PLC project integration into plus10's SaaS platform. Every client (beer producers, medical device manufacturers, etc.) has different PLCs and configurations - my job is to create Python scripts that can handle this diversity.</p>
-                        
-                        <div class="learning-indicator text-sm text-yellow-300 mb-2">
-                            🏭 Understanding diverse industrial automation systems
+                    <div class="expandable" id="parker-desc">
+                        <p class="text-gray-400 text-sm mb-3">My entry into industrial digitization! Started with a factory that wanted to replicate GE's digitization success in another plant. This is where I learned the fundamentals of OT-IT integration.</p>
+                          <div class="learning-indicator text-sm text-purple-300 mb-2">
+                            🏭 First exposure to factory digitization concepts
                         </div>
-                        <div class="learning-indicator text-sm text-yellow-300 mb-2">
-                            🔄 Creating flexible automation scripts for different PLC projects
+                        <div class="learning-indicator text-sm text-purple-300 mb-2">
+                            🔗 Understanding machine-to-historian data flows
                         </div>
-                        <div class="learning-indicator text-sm text-yellow-300 mb-3">
-                            📊 OPC UA specifications and auto-mapping tools
+                        <div class="learning-indicator text-sm text-purple-300 mb-2">
+                            📊 Power BI dashboard development for OEE metrics
                         </div>
-                        
-                        <p class="text-gray-400 text-sm mb-3"><strong>Key Challenge:</strong> The main challenge is that "everything is different all the time" - no single script can handle all scenarios, but the goal is to automate as much as possible to accelerate client onboarding.</p>
-                    </div>
-                    
-                    <button onclick="toggleExpand('plus10-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
-                    
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="achievement-badge bg-green-900/50 text-green-300">Python</span>
-                        <span class="achievement-badge bg-green-900/50 text-green-300">OPC UA</span>
-                        <span class="achievement-badge bg-green-900/50 text-green-300">SaaS</span>
-                        <span class="achievement-badge bg-green-900/50 text-green-300">PLC Integration</span>
-                        <span class="achievement-badge bg-green-900/50 text-green-300">Auto-mapping</span>
-                    </div>
-                </div>
-
-                <!-- Mercedes-Benz -->
-                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
-                    <div class="flex items-center justify-between mb-3">
-                        <p class="text-sm text-gray-500">Mar 2024 - Aug 2024</p>
-                        <div class="tech-icon">
-                            <i class="fab fa-microsoft"></i>
+                        <div class="learning-indicator text-sm text-purple-300 mb-2">
+                            ☁️ Azure integration and SharePoint solutions
                         </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white">Working Student - Data & Services</h3>
-                    <p class="text-md text-indigo-400 font-medium mb-3">Mercedes-Benz AG, Stuttgart</p>
-                    
-                    <div class="expandable" id="mercedes-desc">
-                        <p class="text-gray-400 text-sm mb-3">Developed cloud DevOps solutions for the Mercedes Me Charge Platform. Built a Python-based automation tool to manage role renewals across multiple microservices, replacing manual processes with automated Azure DevOps pipelines.</p>
-                        
-                        <div class="learning-indicator text-sm text-blue-300 mb-2">
-                            🔄 API integration with OpenCharge platform and OCPI v2.1
-                        </div>
-                        <div class="learning-indicator text-sm text-blue-300 mb-2">
-                            ⚡ Full-stack development with Azure Static Web Apps
-                        </div>
-                        <div class="learning-indicator text-sm text-blue-300 mb-2">
-                            🚀 CI/CD pipeline implementation in Azure DevOps
-                        </div>
-                        <div class="learning-indicator text-sm text-blue-300 mb-3">
-                            🎨 Frontend development with interactive dashboards
+                        <div class="learning-indicator text-sm text-purple-300 mb-3">
+                            🎯 Automated document generation reducing processing time by 75%
                         </div>
                         
-                        <p class="text-gray-400 text-sm mb-3"><strong>Problem Solved:</strong> Automated the tedious manual process of renewing expiring roles in Mercedes' internal systems by creating a dashboard that pulls data from internal databases and sends renewal requests via Mercedes' internal APIs.</p>
+                        <p class="text-gray-400 text-sm mb-3"><strong>Starting Point:</strong> This was my first real exposure to industrial automation. I learned how data flows from machines through historians to business intelligence dashboards. Didn't work on many practical implementations but gained crucial foundational understanding.</p>
                     </div>
                     
-                    <button onclick="toggleExpand('mercedes-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
-                    
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="achievement-badge bg-blue-900/50 text-blue-300">Python</span>
-                        <span class="achievement-badge bg-blue-900/50 text-blue-300">Azure DevOps</span>
-                        <span class="achievement-badge bg-blue-900/50 text-blue-300">CI/CD</span>
-                        <span class="achievement-badge bg-blue-900/50 text-blue-300">Full-Stack</span>
-                        <span class="achievement-badge bg-blue-900/50 text-blue-300">OpenAPI</span>
-                        <span class="achievement-badge bg-blue-900/50 text-blue-300">OCPI</span>
-                    </div>
-                </div>
-                 
-                <!-- IER -->
-                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
-                    <div class="flex items-center justify-between mb-3">
-                        <p class="text-sm text-gray-500">Oct 2023 - Feb 2024</p>
-                        <div class="tech-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white">Studentische Hilfskraft</h3>
-                    <p class="text-md text-indigo-400 font-medium mb-3">IER, University of Stuttgart</p>
-                    
-                    <div class="expandable" id="ier-desc">
-                        <p class="text-gray-400 text-sm mb-3">Engineered Python-based ETL tools for energy system analysis. Converted data from SEDOS format to TIMES format, making it compatible with VEDA modeling software for energy system research.</p>
-                        
-                        <div class="learning-indicator text-sm text-yellow-300 mb-2">
-                            📊 Data format transformation (SEDOS to TIMES)
-                        </div>
-                        <div class="learning-indicator text-sm text-yellow-300 mb-2">
-                            🔌 Integration with Open Energy Platform APIs
-                        </div>
-                        <div class="learning-indicator text-sm text-yellow-300 mb-3">
-                            🛠️ Excel data processing and mapping algorithms
-                        </div>
-                        
-                        <p class="text-gray-400 text-sm mb-3"><strong>Focus:</strong> Pure data handling and processing - extracting energy data from various sources (Excel files, APIs) and transforming it into formats acceptable by specialized energy modeling software.</p>
-                    </div>
-                    
-                    <button onclick="toggleExpand('ier-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
-                    
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">Python</span>
-                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">ETL</span>
-                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">REST APIs</span>
-                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">VEDA</span>
-                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">Energy Modeling</span>
+                    <button onclick="toggleExpand('parker-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="achievement-badge bg-purple-900/50 text-purple-300">MS Office</span>
+                        <span class="achievement-badge bg-purple-900/50 text-purple-300">PowerBI</span>
+                        <span class="achievement-badge bg-purple-900/50 text-purple-300">SharePoint</span>
+                        <span class="achievement-badge bg-purple-900/50 text-purple-300">PowerApps</span>
+                        <span class="achievement-badge bg-purple-900/50 text-purple-300">Power Automate</span>
+                        <span class="achievement-badge bg-purple-900/50 text-purple-300">OPC-UA</span>
+                        <span class="achievement-badge bg-purple-900/50 text-purple-300">OEE</span>
                     </div>
                 </div>
 
                 <!-- Fraunhofer IPA -->
-                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
+                <div id="fraunhofer-experience" class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
                     <div class="flex items-center justify-between mb-3">
                         <p class="text-sm text-gray-500">Apr 2022 - Jan 2024</p>
                         <div class="tech-icon">
@@ -374,55 +271,184 @@
                     </div>
                     
                     <button onclick="toggleExpand('fraunhofer-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
-                    
-                    <div class="mt-4 flex flex-wrap gap-2">
+                      <div class="mt-4 flex flex-wrap gap-2">
                         <span class="achievement-badge bg-red-900/50 text-red-300">Python</span>
+                        <span class="achievement-badge bg-red-900/50 text-red-300">Telegraf</span>
+                        <span class="achievement-badge bg-red-900/50 text-red-300">InfluxDB</span>
+                        <span class="achievement-badge bg-red-900/50 text-red-300">Grafana</span>
                         <span class="achievement-badge bg-red-900/50 text-red-300">Docker</span>
                         <span class="achievement-badge bg-red-900/50 text-red-300">MQTT</span>
-                        <span class="achievement-badge bg-red-900/50 text-red-300">5G</span>
-                        <span class="achievement-badge bg-red-900/50 text-red-300">TIG Stack</span>
-                        <span class="achievement-badge bg-red-900/50 text-red-300">Azure IoT</span>
+                        <span class="achievement-badge bg-red-900/50 text-red-300">Azure IoT Hub</span>
+                        <span class="achievement-badge bg-red-900/50 text-red-300">OPC-UA</span>
+                        <span class="achievement-badge bg-red-900/50 text-red-300">Linux</span>
+                        <span class="achievement-badge bg-red-900/50 text-red-300">VMs</span>
                     </div>
                 </div>
 
-                <!-- Parker Hannifin -->
-                <div class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
+                <!-- IER -->
+                <div id="ier-experience" class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
                     <div class="flex items-center justify-between mb-3">
-                        <p class="text-sm text-gray-500">Apr 2022 - Mar 2023</p>
+                        <p class="text-sm text-gray-500">Oct 2023 - Feb 2024</p>
                         <div class="tech-icon">
-                            <i class="fas fa-chart-bar"></i>
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white">Studentische Hilfskraft</h3>
+                    <p class="text-md text-indigo-400 font-medium mb-3">IER, University of Stuttgart</p>
+                    
+                    <div class="expandable" id="ier-desc">
+                        <p class="text-gray-400 text-sm mb-3">Engineered Python-based ETL tools for energy system analysis. Converted data from SEDOS format to TIMES format, making it compatible with VEDA modeling software for energy system research.</p>
+                          <div class="learning-indicator text-sm text-yellow-300 mb-2">
+                            📊 Data format transformation (SEDOS to TIMES)
+                        </div>
+                        <div class="learning-indicator text-sm text-yellow-300 mb-2">
+                            🔌 Integration with Open Energy Platform APIs
+                        </div>
+                        <div class="learning-indicator text-sm text-yellow-300 mb-2">
+                            🛠️ Excel data processing and mapping algorithms
+                        </div>
+                        <div class="learning-indicator text-sm text-yellow-300 mb-3">
+                            📈 Advanced data processing across energy sectors
+                        </div>
+                        
+                        <p class="text-gray-400 text-sm mb-3"><strong>Focus:</strong> Pure data handling and processing - extracting energy data from various sources (Excel files, APIs) and transforming it into formats acceptable by specialized energy modeling software.</p>
+                    </div>
+                    
+                    <button onclick="toggleExpand('ier-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">Python</span>
+                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">ETL</span>
+                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">Data Processing</span>
+                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">APIs</span>
+                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">Git</span>
+                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">VEDA</span>
+                        <span class="achievement-badge bg-yellow-900/50 text-yellow-300">Energy Modeling</span>
+                    </div>
+                </div>
+
+                <!-- Mercedes-Benz -->
+                <div id="mercedes-experience" class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <p class="text-sm text-gray-500">Mar 2024 - Aug 2024</p>
+                        <div class="tech-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white">Working Student - Data & Services</h3>
+                    <p class="text-md text-indigo-400 font-medium mb-3">Mercedes-Benz AG, Stuttgart</p>
+                    
+                    <div class="expandable" id="mercedes-desc">
+                        <p class="text-gray-400 text-sm mb-3">Developed cloud DevOps solutions for the Mercedes Me Charge Platform. Built a Python-based automation tool to manage role renewals across multiple microservices, replacing manual processes with automated Azure DevOps pipelines.</p>
+                          <div class="learning-indicator text-sm text-blue-300 mb-2">
+                            🔄 API integration with OpenCharge platform and OCPI v2.2.1
+                        </div>
+                        <div class="learning-indicator text-sm text-blue-300 mb-2">
+                            ⚡ Full-stack development with Azure Static Web Apps
+                        </div>
+                        <div class="learning-indicator text-sm text-blue-300 mb-2">
+                            🚀 CI/CD pipeline implementation in Azure DevOps
+                        </div>
+                        <div class="learning-indicator text-sm text-blue-300 mb-2">
+                            🎨 Frontend development with Bootstrap and JavaScript
+                        </div>
+                        <div class="learning-indicator text-sm text-blue-300 mb-3">
+                            📊 Charge Detail Records analysis for compliance
+                        </div>
+                        
+                        <p class="text-gray-400 text-sm mb-3"><strong>Problem Solved:</strong> Automated the tedious manual process of renewing expiring roles in Mercedes' internal systems by creating a dashboard that pulls data from internal databases and sends renewal requests via Mercedes' internal APIs.</p>
+                    </div>
+                    
+                    <button onclick="toggleExpand('mercedes-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">Python</span>
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">HTML</span>
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">JavaScript</span>
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">Bootstrap</span>
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">Azure DevOps</span>
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">CI/CD</span>
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">OCPI Standards</span>
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">OpenAPI</span>
+                        <span class="achievement-badge bg-blue-900/50 text-blue-300">Swagger</span>
+                    </div>
+                </div>                <!-- plus10 -->
+                <div id="plus10-experience" class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <p class="text-sm text-gray-500">Sep 2024 - Present</p>
+                        <div class="tech-icon">
+                            <i class="fas fa-robot"></i>
                         </div>
                     </div>
                     <h3 class="text-xl font-semibold text-white">Working Student</h3>
-                    <p class="text-md text-indigo-400 font-medium mb-3">Parker Hannifin GmbH, Bietigheim-Bissingen</p>
+                    <p class="text-md text-indigo-400 font-medium mb-3">plus10 GmbH, Stuttgart</p>
                     
-                    <div class="expandable" id="parker-desc">
-                        <p class="text-gray-400 text-sm mb-3">My entry into industrial digitization! Started with a factory that wanted to replicate GE's digitization success in another plant. This is where I learned the fundamentals of OT-IT integration.</p>
+                    <div class="expandable" id="plus10-desc">                        <p class="text-gray-400 text-sm mb-3">Automating factory PLC project integration into plus10's SaaS platform. Every client (beer producers, medical device manufacturers, etc.) has different PLCs and configurations - my job is to create Python scripts that can handle this diversity.</p>
                         
-                        <div class="learning-indicator text-sm text-purple-300 mb-2">
-                            🏭 First exposure to factory digitization concepts
+                        <div class="learning-indicator text-sm text-yellow-300 mb-2">
+                            🏭 Understanding diverse industrial automation systems
                         </div>
-                        <div class="learning-indicator text-sm text-purple-300 mb-2">
-                            🔗 Understanding machine-to-historian data flows
+                        <div class="learning-indicator text-sm text-yellow-300 mb-2">
+                            🔄 Creating flexible automation scripts for different PLC projects
                         </div>
-                        <div class="learning-indicator text-sm text-purple-300 mb-2">
-                            📊 Power BI dashboard development for OEE metrics
+                        <div class="learning-indicator text-sm text-yellow-300 mb-2">
+                            📊 OPC UA specifications and auto-mapping tools
                         </div>
-                        <div class="learning-indicator text-sm text-purple-300 mb-3">
-                            🎯 End-to-end process understanding: from shop floor to analytics
+                        <div class="learning-indicator text-sm text-yellow-300 mb-3">
+                            🎯 Contributing to MappKIng project with self-configuring tools
                         </div>
                         
-                        <p class="text-gray-400 text-sm mb-3"><strong>Starting Point:</strong> This was my first real exposure to industrial automation. I learned how data flows from machines through historians to business intelligence dashboards. Didn't work on many practical implementations but gained crucial foundational understanding.</p>
+                        <p class="text-gray-400 text-sm mb-3"><strong>Key Challenge:</strong> The main challenge is that "everything is different all the time" - no single script can handle all scenarios, but the goal is to automate as much as possible to accelerate client onboarding and enhance configuration capabilities.</p>
                     </div>
                     
-                    <button onclick="toggleExpand('parker-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
+                    <button onclick="toggleExpand('plus10-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="achievement-badge bg-green-900/50 text-green-300">Python</span>
+                        <span class="achievement-badge bg-green-900/50 text-green-300">OPC UA</span>
+                        <span class="achievement-badge bg-green-900/50 text-green-300">MES</span>
+                        <span class="achievement-badge bg-green-900/50 text-green-300">PLC Integration</span>
+                        <span class="achievement-badge bg-green-900/50 text-green-300">Siemens TIA Portal</span>
+                        <span class="achievement-badge bg-green-900/50 text-green-300">MappKIng</span>
+                        <span class="achievement-badge bg-green-900/50 text-green-300">Automation</span>
+                    </div>
+                </div>
+
+                <!-- Master Thesis -->
+                <div id="thesis-experience" class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <p class="text-sm text-gray-500">Feb 2025 - Present</p>
+                        <div class="tech-icon">
+                            <i class="fab fa-julia"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white">Master Thesis Student</h3>
+                    <p class="text-md text-indigo-400 font-medium mb-3">IKR, University of Stuttgart</p>
                     
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="achievement-badge bg-purple-900/50 text-purple-300">Power BI</span>
-                        <span class="achievement-badge bg-purple-900/50 text-purple-300">SharePoint</span>
-                        <span class="achievement-badge bg-purple-900/50 text-purple-300">OPC UA</span>
-                        <span class="achievement-badge bg-purple-900/50 text-purple-300">OEE</span>
-                        <span class="achievement-badge bg-purple-900/50 text-purple-300">Data Historians</span>
+                    <div class="expandable" id="thesis-desc">
+                        <p class="text-gray-400 text-sm mb-3">Bridging the MINDFul Intent-Based Networking (IBN) framework with TeraFlowSDN controller using Julia. Breaking down high-level network intents (e.g., "connect NY with London at 10Gbps") into actionable lower-level intents for SDN devices.</p>
+                        
+                        <div class="learning-indicator text-sm text-green-300 mb-2">
+                            🎯 Learned Julia from scratch in just a few weeks
+                        </div>
+                        <div class="learning-indicator text-sm text-green-300 mb-2">
+                            🔧 Mastered Kubernetes microservices deployment
+                        </div>
+                        <div class="learning-indicator text-sm text-green-300 mb-3">
+                            🌐 Deep-dived into SDN and network automation concepts
+                        </div>
+                        
+                        <p class="text-gray-400 text-sm mb-3"><strong>Technical Challenge:</strong> Developed Julia-based HTTP APIs using Oxygen.jl, handled Protobuf schemas, and created OpenConfig-compatible mappings for seamless device configuration.</p>
+                    </div>
+                    
+                    <button onclick="toggleExpand('thesis-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">Julia</span>
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">SDN</span>
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">Kubernetes</span>
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">IBN</span>
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">OpenConfig</span>
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">REST APIs</span>
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">Network Automation</span>
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">TeraFlowSDN</span>
+                        <span class="achievement-badge bg-indigo-900/50 text-indigo-300">Linux</span>
                     </div>
                 </div>
             </div>
@@ -471,16 +497,14 @@
                 </div>
 
                 <!-- Third Row -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
                         <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-microchip"></i></div>
                         <h3 class="text-2xl font-semibold text-white mb-3">Electronics & Embedded</h3>
-                        <p class="text-gray-400">LabVIEW, Simulink, Hardware-Software Integration</p>
-                    </div>
-                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
+                        <p class="text-gray-400">LabVIEW, MATLAB/Simulink, Hardware-Software Integration, CodeSys, LTSpice</p>
+                    </div><div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
                         <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-tools"></i></div>
                         <h3 class="text-2xl font-semibold text-white mb-3">Development Tools</h3>
-                        <p class="text-gray-400">MS Office Suite, SharePoint, Git Version Control</p>
+                        <p class="text-gray-400">MS Office Suite, SharePoint, PowerApps, Power Automate, Git, LaTeX, Linux</p>
                     </div>
                     <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
                         <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-cogs"></i></div>
@@ -506,6 +530,22 @@
                     <h3 class="text-2xl font-semibold text-white">B.Tech. Electronics Engineering</h3>
                     <p class="text-lg text-indigo-400">K. J. Somaiya College of Engineering, University of Mumbai, India</p>
                     <p class="text-gray-400 mt-2">CGPA: 8.94/10</p>
+                </div>
+            </div>        </section>
+
+        <!-- Languages Section -->
+        <section id="languages" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">Languages</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800 text-center">
+                        <h3 class="text-2xl font-semibold text-white mb-2">English</h3>
+                        <p class="text-lg text-indigo-400 mb-2">Fluent (C1)</p>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800 text-center">
+                        <h3 class="text-2xl font-semibold text-white mb-2">German</h3>
+                        <p class="text-lg text-indigo-400 mb-2">Intermediate (B2)</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -549,9 +589,7 @@
             link.addEventListener('click', () => {
                  mobileMenu.classList.add('hidden');
             });
-        }
-
-        // Toggle expandable sections
+        }        // Toggle expandable sections
         function toggleExpand(id) {
             const element = document.getElementById(id);
             const button = element.nextElementSibling;
@@ -563,7 +601,14 @@
                 element.classList.add('expanded');
                 button.textContent = 'Read less...';
             }
-        }
+        }        // Auto-scroll experience timeline to show latest experience (rightmost position)
+        window.addEventListener('load', function() {
+            const timelineContainer = document.querySelector('.timeline-container');
+            if (timelineContainer) {
+                // Scroll the experience timeline to the right to show the latest experience first
+                timelineContainer.scrollLeft = timelineContainer.scrollWidth - timelineContainer.clientWidth;
+            }
+        });
     </script>
 </body>
 </html>
