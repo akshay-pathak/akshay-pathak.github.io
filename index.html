@@ -76,21 +76,32 @@
             transform: rotate(360deg) scale(1.1);
         }
         
-        /* Learning path indicators */
-        .learning-indicator {
-            position: relative;
-            padding-left: 30px;
-        }
-        .learning-indicator::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            background: #4f46e5;
+        /* Go to top button */
+        .go-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            box-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        }
+        .go-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .go-to-top:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
         }
     </style>
 </head>
@@ -101,7 +112,7 @@
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-indigo-400">Akshay Pathak</a>
             <div class="hidden md:flex space-x-6 items-center">
-                <a href="#about" class="text-gray-300 hover:text-indigo-400 transition duration-300">About</a>
+                <a href="#home" class="text-gray-300 hover:text-indigo-400 transition duration-300">About</a>
                 <a href="#experience" class="text-gray-300 hover:text-indigo-400 transition duration-300">Experience</a>
                 <a href="#skills" class="text-gray-300 hover:text-indigo-400 transition duration-300">Skills</a>
                 <a href="#education" class="text-gray-300 hover:text-indigo-400 transition duration-300">Education</a>
@@ -114,7 +125,7 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-black px-6 pb-4">
-            <a href="#about" class="block py-2 text-gray-300 hover:text-indigo-400">About</a>
+            <a href="#home" class="block py-2 text-gray-300 hover:text-indigo-400">About</a>
             <a href="#experience" class="block py-2 text-gray-300 hover:text-indigo-400">Experience</a>
             <a href="#skills" class="block py-2 text-gray-300 hover:text-indigo-400">Skills</a>
             <a href="#education" class="block py-2 text-gray-300 hover:text-indigo-400">Education</a>
@@ -125,28 +136,30 @@
 
     <main class="container mx-auto px-6 py-12">
 
-        <!-- Hero Section -->
+        <!-- Hero & About Section Combined -->
         <section id="home" class="text-center py-20">
             <!-- Profile Photo -->
             <div class="mb-8">
                 <img src="./Akshay.jpg" alt="Akshay Pathak" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto border-4 border-indigo-400 shadow-lg shadow-indigo-500/30 object-cover">
             </div>
             <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4">Akshay Pathak</h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-8">M.Sc. Information Technology | Industrial Automation & Software Development</p>
+            <p class="text-xl md:text-2xl text-400 mb-10">M.Sc. Information Technology | Industrial Automation & Software Development</p>
+            <hr class="my-8 border-t-2 border-indigo-600 w-20 mx-auto opacity-70">
+            
+            <!-- About Me Content -->
+            <div class="max-w-4xl mx-auto text-lg text-gray-400 leading-relaxed mb-8">
+                <p>
+                    I am an Information Technology professional currently pursuing my Master's in Information Technology (INFOTECH) at the University of Stuttgart. With a strong foundation in electronics engineering and hands-on experience in industrial automation, I specialize in bridging the gap between operational technology (OT) and information technology (IT). My expertise spans from shop-floor digitization and smart factory solutions to cloud technologies and software development. I have worked extensively with Python, Julia, and various industrial protocols like OPC UA and MQTT, creating efficient data processing pipelines and implementing robust DevOps practices across automotive, manufacturing, and energy sectors.
+                </p>
+            </div>
+            
+            <hr class="my-8 border-t-2 border-indigo-600 w-20 mx-auto opacity-70">
+
+            <!-- Social Links -->
             <div class="flex justify-center space-x-6">
                 <a href="https://www.linkedin.com/in/akshay-s-pathak" target="_blank" class="text-indigo-400 hover:text-indigo-300 transition duration-300 text-3xl"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/akshay-pathak" target="_blank" class="text-indigo-400 hover:text-indigo-300 transition duration-300 text-3xl"><i class="fab fa-github"></i></a>
                 <a href="mailto:aspathak26@gmail.com" class="text-indigo-400 hover:text-indigo-300 transition duration-300 text-3xl"><i class="fas fa-envelope"></i></a>
-            </div>
-        </section>
-
-        <!-- About Me Section -->
-        <section id="about" class="py-20 border-t border-gray-800">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">About Me</h2>
-            <div class="max-w-4xl mx-auto text-lg text-gray-400 leading-relaxed text-center">
-                <p>
-                    I am an Information Technology professional currently pursuing my Master's in Information Technology (INFOTECH) at the University of Stuttgart. With a strong foundation in electronics engineering and hands-on experience in industrial automation, I specialize in bridging the gap between operational technology (OT) and information technology (IT). My expertise spans from shop-floor digitization and smart factory solutions to cloud technologies and software development. I have worked extensively with Python, Julia, and various industrial protocols like OPC UA and MQTT, creating efficient data processing pipelines and implementing robust DevOps practices across automotive, manufacturing, and energy sectors.
-                </p>
             </div>
         </section>
 
@@ -589,6 +602,11 @@
         </div>
     </footer>
 
+    <!-- Go to Top Button -->
+    <button id="go-to-top" class="go-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -612,6 +630,26 @@
                 // Scroll the experience timeline to the right to show the latest experience first
                 timelineContainer.scrollLeft = timelineContainer.scrollWidth - timelineContainer.clientWidth;
             }
+        });
+
+        // Go to top button functionality
+        const goToTopButton = document.getElementById('go-to-top');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                goToTopButton.classList.add('visible');
+            } else {
+                goToTopButton.classList.remove('visible');
+            }
+        });
+
+        // Smooth scroll to top when button is clicked
+        goToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>
