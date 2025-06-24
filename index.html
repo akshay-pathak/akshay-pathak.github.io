@@ -92,16 +92,6 @@
             border-radius: 50%;
             box-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
         }
-        
-        /* Expandable sections */
-        .expandable {
-            max-height: 100px;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        .expandable.expanded {
-            max-height: none;
-        }
     </style>
 </head>
 <body class="bg-black text-gray-300">
@@ -109,7 +99,8 @@
     <!-- Header & Navigation -->
     <header class="bg-black/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-indigo-400">Akshay Pathak</a>            <div class="hidden md:flex space-x-6 items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-400">Akshay Pathak</a>
+            <div class="hidden md:flex space-x-6 items-center">
                 <a href="#about" class="text-gray-300 hover:text-indigo-400 transition duration-300">About</a>
                 <a href="#experience" class="text-gray-300 hover:text-indigo-400 transition duration-300">Experience</a>
                 <a href="#skills" class="text-gray-300 hover:text-indigo-400 transition duration-300">Skills</a>
@@ -121,7 +112,8 @@
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </nav>
-        <!-- Mobile Menu -->        <div id="mobile-menu" class="hidden md:hidden bg-black px-6 pb-4">
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black px-6 pb-4">
             <a href="#about" class="block py-2 text-gray-300 hover:text-indigo-400">About</a>
             <a href="#experience" class="block py-2 text-gray-300 hover:text-indigo-400">Experience</a>
             <a href="#skills" class="block py-2 text-gray-300 hover:text-indigo-400">Skills</a>
@@ -160,7 +152,8 @@
 
         <!-- Experience Section -->
         <section id="experience" class="py-20 border-t border-gray-800">
-            <h2 class="text-4xl font-bold text-center mb-4 text-white">My Professional Journey</h2>            <!-- Learning Path Overview -->
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">My Professional Journey</h2>
+            <!-- Learning Path Overview -->
             <div class="max-w-6xl mx-auto mb-16 bg-gray-900/50 p-6 rounded-lg border border-gray-800">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 text-center">
                     <a href="#parker-experience" class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors cursor-pointer">
@@ -195,7 +188,7 @@
                     </a>
                 </div>
             </div>
-              <div class="timeline-container flex overflow-x-auto space-x-8 pb-8 px-4">
+            <div class="timeline-container flex overflow-x-auto space-x-8 pb-8 px-4">
                 
                 <!-- Parker Hannifin -->
                 <div id="parker-experience" class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
@@ -208,9 +201,10 @@
                     <h3 class="text-xl font-semibold text-white">Working Student</h3>
                     <p class="text-md text-indigo-400 font-medium mb-3">Parker Hannifin GmbH, Bietigheim-Bissingen</p>
                     
-                    <div class="expandable" id="parker-desc">
+                    <div class="mb-4">
                         <p class="text-gray-400 text-sm mb-3">My entry into industrial digitization! Started with a factory that wanted to replicate GE's digitization success in another plant. This is where I learned the fundamentals of OT-IT integration.</p>
-                          <div class="learning-indicator text-sm text-purple-300 mb-2">
+                        
+                        <div class="learning-indicator text-sm text-purple-300 mb-2">
                             🏭 First exposure to factory digitization concepts
                         </div>
                         <div class="learning-indicator text-sm text-purple-300 mb-2">
@@ -229,8 +223,7 @@
                         <p class="text-gray-400 text-sm mb-3"><strong>Starting Point:</strong> This was my first real exposure to industrial automation. I learned how data flows from machines through historians to business intelligence dashboards. Didn't work on many practical implementations but gained crucial foundational understanding.</p>
                     </div>
                     
-                    <button onclick="toggleExpand('parker-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
-                      <div class="mt-4 flex flex-wrap gap-2">
+                    <div class="mt-4 flex flex-wrap gap-2">
                         <span class="achievement-badge bg-purple-900/50 text-purple-300">MS Office</span>
                         <span class="achievement-badge bg-purple-900/50 text-purple-300">PowerBI</span>
                         <span class="achievement-badge bg-purple-900/50 text-purple-300">SharePoint</span>
@@ -252,7 +245,7 @@
                     <h3 class="text-xl font-semibold text-white">Wissenschaftliche Hilfskraft</h3>
                     <p class="text-md text-indigo-400 font-medium mb-3">Fraunhofer IPA, Stuttgart</p>
                     
-                    <div class="expandable" id="fraunhofer-desc">
+                    <div class="mb-4">
                         <p class="text-gray-400 text-sm mb-3">Built an end-to-end analytics pipeline for a 5G smart factory project with multiple industry partners. This was where I truly learned the fundamentals of industrial IoT and containerized deployments.</p>
                         
                         <div class="learning-indicator text-sm text-red-300 mb-2">
@@ -274,8 +267,7 @@
                         <p class="text-gray-400 text-sm mb-3"><strong>Learning Journey:</strong> This role was transformative - I learned Docker containerization, MQTT protocols, time-series databases, and real-time data visualization all from scratch. Built production-ready dashboards for factory monitoring.</p>
                     </div>
                     
-                    <button onclick="toggleExpand('fraunhofer-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
-                      <div class="mt-4 flex flex-wrap gap-2">
+                    <div class="mt-4 flex flex-wrap gap-2">
                         <span class="achievement-badge bg-red-900/50 text-red-300">Python</span>
                         <span class="achievement-badge bg-red-900/50 text-red-300">Telegraf</span>
                         <span class="achievement-badge bg-red-900/50 text-red-300">InfluxDB</span>
@@ -300,9 +292,10 @@
                     <h3 class="text-xl font-semibold text-white">Studentische Hilfskraft</h3>
                     <p class="text-md text-indigo-400 font-medium mb-3">IER, University of Stuttgart</p>
                     
-                    <div class="expandable" id="ier-desc">
+                    <div class="mb-4">
                         <p class="text-gray-400 text-sm mb-3">Engineered Python-based ETL tools for energy system analysis. Converted data from SEDOS format to TIMES format, making it compatible with VEDA modeling software for energy system research.</p>
-                          <div class="learning-indicator text-sm text-yellow-300 mb-2">
+                        
+                        <div class="learning-indicator text-sm text-yellow-300 mb-2">
                             📊 Data format transformation (SEDOS to TIMES)
                         </div>
                         <div class="learning-indicator text-sm text-yellow-300 mb-2">
@@ -318,8 +311,7 @@
                         <p class="text-gray-400 text-sm mb-3"><strong>Focus:</strong> Pure data handling and processing - extracting energy data from various sources (Excel files, APIs) and transforming it into formats acceptable by specialized energy modeling software.</p>
                     </div>
                     
-                    <button onclick="toggleExpand('ier-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
-                      <div class="mt-4 flex flex-wrap gap-2">
+                    <div class="mt-4 flex flex-wrap gap-2">
                         <span class="achievement-badge bg-yellow-900/50 text-yellow-300">Python</span>
                         <span class="achievement-badge bg-yellow-900/50 text-yellow-300">ETL</span>
                         <span class="achievement-badge bg-yellow-900/50 text-yellow-300">Data Processing</span>
@@ -341,9 +333,10 @@
                     <h3 class="text-xl font-semibold text-white">Working Student - Data & Services</h3>
                     <p class="text-md text-indigo-400 font-medium mb-3">Mercedes-Benz AG, Stuttgart</p>
                     
-                    <div class="expandable" id="mercedes-desc">
+                    <div class="mb-4">
                         <p class="text-gray-400 text-sm mb-3">Developed cloud DevOps solutions for the Mercedes Me Charge Platform. Built a Python-based automation tool to manage role renewals across multiple microservices, replacing manual processes with automated Azure DevOps pipelines.</p>
-                          <div class="learning-indicator text-sm text-blue-300 mb-2">
+                        
+                        <div class="learning-indicator text-sm text-blue-300 mb-2">
                             🔄 API integration with OpenCharge platform and OCPI v2.2.1
                         </div>
                         <div class="learning-indicator text-sm text-blue-300 mb-2">
@@ -362,8 +355,7 @@
                         <p class="text-gray-400 text-sm mb-3"><strong>Problem Solved:</strong> Automated the tedious manual process of renewing expiring roles in Mercedes' internal systems by creating a dashboard that pulls data from internal databases and sends renewal requests via Mercedes' internal APIs.</p>
                     </div>
                     
-                    <button onclick="toggleExpand('mercedes-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
-                      <div class="mt-4 flex flex-wrap gap-2">
+                    <div class="mt-4 flex flex-wrap gap-2">
                         <span class="achievement-badge bg-blue-900/50 text-blue-300">Python</span>
                         <span class="achievement-badge bg-blue-900/50 text-blue-300">HTML</span>
                         <span class="achievement-badge bg-blue-900/50 text-blue-300">JavaScript</span>
@@ -374,7 +366,9 @@
                         <span class="achievement-badge bg-blue-900/50 text-blue-300">OpenAPI</span>
                         <span class="achievement-badge bg-blue-900/50 text-blue-300">Swagger</span>
                     </div>
-                </div>                <!-- plus10 -->
+                </div>
+
+                <!-- plus10 -->
                 <div id="plus10-experience" class="flex-shrink-0 w-80 md:w-96 bg-gray-900 p-6 rounded-lg border border-gray-800 experience-card">
                     <div class="flex items-center justify-between mb-3">
                         <p class="text-sm text-gray-500">Sep 2024 - Present</p>
@@ -385,7 +379,8 @@
                     <h3 class="text-xl font-semibold text-white">Working Student</h3>
                     <p class="text-md text-indigo-400 font-medium mb-3">plus10 GmbH, Stuttgart</p>
                     
-                    <div class="expandable" id="plus10-desc">                        <p class="text-gray-400 text-sm mb-3">Automating factory PLC project integration into plus10's SaaS platform. Every client (beer producers, medical device manufacturers, etc.) has different PLCs and configurations - my job is to create Python scripts that can handle this diversity.</p>
+                    <div class="mb-4">
+                        <p class="text-gray-400 text-sm mb-3">Automating factory PLC project integration into plus10's SaaS platform. Every client (beer producers, medical device manufacturers, etc.) has different PLCs and configurations - my job is to create Python scripts that can handle this diversity.</p>
                         
                         <div class="learning-indicator text-sm text-yellow-300 mb-2">
                             🏭 Understanding diverse industrial automation systems
@@ -403,8 +398,7 @@
                         <p class="text-gray-400 text-sm mb-3"><strong>Key Challenge:</strong> The main challenge is that "everything is different all the time" - no single script can handle all scenarios, but the goal is to automate as much as possible to accelerate client onboarding and enhance configuration capabilities.</p>
                     </div>
                     
-                    <button onclick="toggleExpand('plus10-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
-                      <div class="mt-4 flex flex-wrap gap-2">
+                    <div class="mt-4 flex flex-wrap gap-2">
                         <span class="achievement-badge bg-green-900/50 text-green-300">Python</span>
                         <span class="achievement-badge bg-green-900/50 text-green-300">OPC UA</span>
                         <span class="achievement-badge bg-green-900/50 text-green-300">MES</span>
@@ -426,7 +420,7 @@
                     <h3 class="text-xl font-semibold text-white">Master Thesis Student</h3>
                     <p class="text-md text-indigo-400 font-medium mb-3">IKR, University of Stuttgart</p>
                     
-                    <div class="expandable" id="thesis-desc">
+                    <div class="mb-4">
                         <p class="text-gray-400 text-sm mb-3">Bridging the MINDFul Intent-Based Networking (IBN) framework with TeraFlowSDN controller using Julia. Breaking down high-level network intents (e.g., "connect NY with London at 10Gbps") into actionable lower-level intents for SDN devices.</p>
                         
                         <div class="learning-indicator text-sm text-green-300 mb-2">
@@ -440,10 +434,23 @@
                         </div>
                         
                         <p class="text-gray-400 text-sm mb-3"><strong>Technical Challenge:</strong> Developed Julia-based HTTP APIs using Oxygen.jl, handled Protobuf schemas, and created OpenConfig-compatible mappings for seamless device configuration.</p>
+                        
+                        <!-- GitHub Repository Link -->
+                        <div class="mt-4 p-3 bg-indigo-900/30 border border-indigo-500/30 rounded-lg">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-indigo-300 font-medium">📂 Project Repository</p>
+                                    <p class="text-xs text-gray-400">Check out the implementation</p>
+                                </div>
+                                <a href="https://github.com/UniStuttgart-IKR/MINDFulTeraFlowSDN.jl" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium px-3 py-2 rounded-lg transition duration-300 flex items-center">
+                                    <i class="fab fa-github mr-2"></i>
+                                    View Repo
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     
-                    <button onclick="toggleExpand('thesis-desc')" class="text-indigo-400 text-sm hover:text-indigo-300 mb-3">Read more...</button>
-                      <div class="mt-4 flex flex-wrap gap-2">
+                    <div class="mt-4 flex flex-wrap gap-2">
                         <span class="achievement-badge bg-indigo-900/50 text-indigo-300">Julia</span>
                         <span class="achievement-badge bg-indigo-900/50 text-indigo-300">SDN</span>
                         <span class="achievement-badge bg-indigo-900/50 text-indigo-300">Kubernetes</span>
@@ -501,11 +508,13 @@
                 </div>
 
                 <!-- Third Row -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
                         <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-microchip"></i></div>
                         <h3 class="text-2xl font-semibold text-white mb-3">Electronics & Embedded</h3>
                         <p class="text-gray-400">LabVIEW, MATLAB/Simulink, Hardware-Software Integration, CodeSys, LTSpice</p>
-                    </div><div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
+                    </div>
+                    <div class="skill-card bg-gray-900 p-8 rounded-lg border border-gray-800">
                         <div class="text-3xl text-indigo-400 mb-4"><i class="fas fa-tools"></i></div>
                         <h3 class="text-2xl font-semibold text-white mb-3">Development Tools</h3>
                         <p class="text-gray-400">MS Office Suite, SharePoint, PowerApps, Power Automate, Git, LaTeX, Linux</p>
@@ -535,7 +544,8 @@
                     <p class="text-lg text-indigo-400">K. J. Somaiya College of Engineering, University of Mumbai, India</p>
                     <p class="text-gray-400 mt-2">CGPA: 8.94/10</p>
                 </div>
-            </div>        </section>
+            </div>
+        </section>
 
         <!-- Languages Section -->
         <section id="languages" class="py-20 border-t border-gray-800">
@@ -593,19 +603,9 @@
             link.addEventListener('click', () => {
                  mobileMenu.classList.add('hidden');
             });
-        }        // Toggle expandable sections
-        function toggleExpand(id) {
-            const element = document.getElementById(id);
-            const button = element.nextElementSibling;
-            
-            if (element.classList.contains('expanded')) {
-                element.classList.remove('expanded');
-                button.textContent = 'Read more...';
-            } else {
-                element.classList.add('expanded');
-                button.textContent = 'Read less...';
-            }
-        }        // Auto-scroll experience timeline to show latest experience (rightmost position)
+        }
+
+        // Auto-scroll experience timeline to show latest experience (rightmost position)
         window.addEventListener('load', function() {
             const timelineContainer = document.querySelector('.timeline-container');
             if (timelineContainer) {
